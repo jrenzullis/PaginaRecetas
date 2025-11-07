@@ -1,16 +1,19 @@
-<div *ngIf="recipe" class="card h-100 shadow-sm">
+<div *ngIf="recipe" class="card h-100 shadow-sm recipe-card border-0">
   <img *ngIf="recipe.image" [src]="recipe.image" class="card-img-top" alt="{{ recipe.title }}">
-  <div class="card-body d-flex flex-column">
-    <h5 class="card-title text-primary">{{ recipe.title }}</h5>
-    <p class="card-text">{{ recipe.description }}</p>
 
-    <h6>Ingredientes:</h6>
-    <ul>
-      <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+  <div class="card-body">
+    <h5 class="card-title text-primary fw-bold">{{ recipe.title }}</h5>
+    <p class="card-text text-muted">{{ recipe.description }}</p>
+
+    <h6 class="fw-semibold mt-3">Ingredientes:</h6>
+    <ul class="list-unstyled">
+      <li *ngFor="let ingredient of recipe.ingredients" class="ingredient-item">
+        🍽️ {{ ingredient }}
+      </li>
     </ul>
 
-     <button class="btn btn-danger mt-auto" (click)="onDelete()">Borrar</button>
-
-
+    <button class="btn btn-outline-danger mt-3 w-100" (click)="delete.emit(index)">
+      🗑️ Borrar
+    </button>
   </div>
 </div>

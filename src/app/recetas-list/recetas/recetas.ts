@@ -15,7 +15,7 @@ export class Recetas {
   @Output() delete = new EventEmitter<number>();
 
   onDelete() {
-  this.delete.emit(this.index); // 🔥 emite el índice al padre
+  this.delete.emit(this.index); // emite el índice al padre
 }
 
 }

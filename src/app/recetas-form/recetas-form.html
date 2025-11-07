@@ -1,27 +1,66 @@
-<div class="card p-3 mb-4 shadow-sm">
-  <h3 class="mb-3 text-center text-success">➕ Añadir nueva receta</h3>
+<div class="container my-5">
+  <div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+    <h2 class="card-title text-center text-primary mb-4">Añadir Nueva Receta 🍳</h2>
 
-  <form (ngSubmit)="onSubmit()" #recipeForm="ngForm">
-    <div class="mb-3">
-      <label for="title" class="form-label">Título</label>
-      <input id="title" class="form-control" [(ngModel)]="title" name="title" required>
-    </div>
+    <form (ngSubmit)="onSubmit()" #recipeForm="ngForm">
+      <!-- Título -->
+      <div class="mb-3">
+        <label for="title" class="form-label fw-bold">Título de la receta</label>
+        <input 
+          type="text" 
+          id="title" 
+          class="form-control" 
+          placeholder="Ej: Tortilla de Patatas"
+          [(ngModel)]="title" 
+          name="title" 
+          required>
+      </div>
 
-    <div class="mb-3">
-      <label for="description" class="form-label">Descripción</label>
-      <textarea id="description" class="form-control" [(ngModel)]="description" name="description" required></textarea>
-    </div>
+      <!-- Descripción -->
+      <div class="mb-3">
+        <label for="description" class="form-label fw-bold">Descripción</label>
+        <textarea 
+          id="description" 
+          class="form-control" 
+          placeholder="Breve descripción de la receta" 
+          [(ngModel)]="description" 
+          name="description" 
+          rows="3" 
+          required>
+        </textarea>
+      </div>
 
-    <div class="mb-3">
-      <label for="image" class="form-label">URL de Imagen (opcional)</label>
-      <input id="image" class="form-control" [(ngModel)]="image" name="image">
-    </div>
+      <!-- Imagen -->
+      <div class="mb-3">
+        <label for="image" class="form-label fw-bold">URL de la imagen</label>
+        <input 
+          type="text" 
+          id="image" 
+          class="form-control" 
+          placeholder="https://..." 
+          [(ngModel)]="image" 
+          name="image">
+      </div>
 
-    <div class="mb-3">
-      <label for="ingredients" class="form-label">Ingredientes (separados por comas)</label>
-      <input id="ingredients" class="form-control" [(ngModel)]="ingredientsText" name="ingredients">
-    </div>
+      <!-- Ingredientes -->
+      <div class="mb-3">
+        <label for="ingredients" class="form-label fw-bold">Ingredientes</label>
+        <textarea 
+          id="ingredients" 
+          class="form-control" 
+          placeholder="Separar por comas: Huevos, Patatas, Cebolla..." 
+          [(ngModel)]="ingredientsText" 
+          name="ingredientsText" 
+          rows="3"
+          required>
+        </textarea>
+        <small class="text-muted">Separar cada ingrediente con coma.</small>
+      </div>
 
-    <button class="btn btn-primary w-100" type="submit">Agregar Receta</button>
-  </form>
+      <!-- Botón enviar -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success btn-lg">Agregar Receta</button>
+      </div>
+    </form>
+  </div>
 </div>

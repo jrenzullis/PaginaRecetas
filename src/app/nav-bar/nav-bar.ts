@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-nav-bar',
-  imports: [],
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './nav-bar.html',
-  styleUrl: './nav-bar.scss',
+  styleUrl: './nav-bar.scss'
 })
-export class NavBar {
-
+export class Navbar {
+  // Puedes añadir propiedades más adelante si quieres mostrar usuario, etc.
 }
