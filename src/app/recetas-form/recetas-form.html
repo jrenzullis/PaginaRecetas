@@ -1,0 +1,27 @@
+<div class="card p-3 mb-4 shadow-sm">
+  <h3 class="mb-3 text-center text-success">➕ Añadir nueva receta</h3>
+
+  <form (ngSubmit)="onSubmit()" #recipeForm="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input id="title" class="form-control" [(ngModel)]="title" name="title" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea id="description" class="form-control" [(ngModel)]="description" name="description" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">URL de Imagen (opcional)</label>
+      <input id="image" class="form-control" [(ngModel)]="image" name="image">
+    </div>
+
+    <div class="mb-3">
+      <label for="ingredients" class="form-label">Ingredientes (separados por comas)</label>
+      <input id="ingredients" class="form-control" [(ngModel)]="ingredientsText" name="ingredients">
+    </div>
+
+    <button class="btn btn-primary w-100" type="submit">Agregar Receta</button>
+  </form>
+</div>

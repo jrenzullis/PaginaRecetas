@@ -1,0 +1,25 @@
+<div class="container my-4">
+  <h2 class="mb-4 text-center">📖 Lista de Recetas</h2>
+  
+
+
+
+  <div *ngIf="recipes.length > 0; else noRecipes">
+    <div class="row g-3">
+      <div *ngFor="let recipe of recipes; let i = index" class="col-md-4 col-sm-6">
+        <!-- Aquí usamos el componente hijo -->
+        <app-recetas
+          [recipe]="recipe"
+          [index]="i"
+          (delete)="onDeleteRecipe($event)">
+        </app-recetas>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noRecipes>
+    <div class="alert alert-info text-center">
+      No hay recetas todavía. ¡Agrega una nueva!
+    </div>
+  </ng-template>
+</div>
