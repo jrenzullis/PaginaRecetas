@@ -1,25 +1,21 @@
 <div class="container my-4">
+  <!-- Titulo de la seccion de recetas -->
   <h2 class="mb-4 text-center">Lista de Recetas</h2>
-  
 
-
-
+  <!-- Comprobamos si hay recetas en el array -->
   <div *ngIf="recipes.length > 0; else noRecipes">
     <div class="row g-3">
+      <!-- Iteramos sobre cada receta y mostramos el componente hijo Recetas -->
       <div *ngFor="let recipe of recipes; let i = index" class="col-md-3 col-sm-6">
-        <!-- Aquí usamos el componente hijo -->
         <app-recetas
-          [recipe]="recipe"
-          [index]="i"
-          (delete)="onDeleteRecipe($event)">
+          [recipe]="recipe"  
+          [index]="i"        
+          (delete)="onDeleteRecipe($event)"> <!-- Capturamos el evento delete del hijo -->
         </app-recetas>
       </div>
     </div>
   </div>
 
-  <ng-template #noRecipes>
-    <div class="alert alert-info text-center">
-      No hay recetas todavía. ¡Agrega una nueva!
-    </div>
+  
   </ng-template>
 </div>

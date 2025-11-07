@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './nav-bar.scss'
 })
 export class Navbar {
-  // Puedes añadir propiedades más adelante si quieres mostrar usuario, etc.
+ 
 }

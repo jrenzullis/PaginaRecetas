@@ -1,19 +1,28 @@
+<!-- Comprobamos que exista la receta antes de mostrarla -->
 <div *ngIf="recipe" class="card h-100 shadow-sm recipe-card border-0">
+  
+  <!-- Mostramos la imagen de la receta si existe -->
   <img *ngIf="recipe.image" [src]="recipe.image" class="card-img-top" alt="{{ recipe.title }}">
 
   <div class="card-body">
+    <!-- Titulo de la receta -->
     <h5 class="card-title text-primary fw-bold">{{ recipe.title }}</h5>
+
+    <!-- Descripcion de la receta -->
     <p class="card-text text-muted">{{ recipe.description }}</p>
 
+    <!-- Lista de ingredientes -->
     <h6 class="fw-semibold mt-3">Ingredientes:</h6>
     <ul class="list-unstyled">
+      <!-- Iteramos sobre cada ingrediente -->
       <li *ngFor="let ingredient of recipe.ingredients" class="ingredient-item">
-        🍽️ {{ ingredient }}
+         {{ ingredient }}
       </li>
     </ul>
 
+    <!-- Boton para borrar la receta, emite el evento hacia el padre -->
     <button class="btn btn-outline-danger mt-3 w-100" (click)="delete.emit(index)">
-      🗑️ Borrar
+      Borrar
     </button>
   </div>
 </div>
